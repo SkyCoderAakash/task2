@@ -18,6 +18,10 @@ function addToCart(product) {
         alert('This product is already in the cart');
         return;
     }
+    if (product.stock<1) {
+        alert('This product is out of stock');
+        return;
+    }
     cart.push(product);
     sessionStorage.setItem('cart', JSON.stringify(cart));
     alert(`${product.name} added to your customized box`);
